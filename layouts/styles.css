@@ -1,0 +1,230 @@
+/*
+
+Links:
+FLEX - https://css-tricks.com/snippets/css/a-guide-to-flexbox/ 
+GRID - https://css-tricks.com/snippets/css/complete-guide-grid/ 
+Sceleton boilerplate - http://getskeleton.com/
+MDN - https://developer.mozilla.org/ru/docs/Learn/CSS/
+
+Color palette:
+Midnight Blue #41729f
+Blue Gray #5885af
+Dark Blue #274472
+Baby Blue #DAE8FC
+
+Google fonts:
+font-family: 'Lora', serif;
+font-family: 'Ubuntu Condensed', sans-serif;
+
+*/
+
+@font-face {
+    font-family: "Ubuntu Condensed" ;
+    src: url("/layouts/fonts/UbuntuCondensed-Regular.ttf") format("truetype");
+
+    font-family: "Lora" ;
+    src: url("/layouts/fonts/Lora-Regular.ttf") format("truetype");
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lora', serif; 
+    font-size: 1.1rem; 
+    color: #4d4d4d;
+}
+
+body {
+    margin: 0; 
+    padding:0; 
+    text-align: center; 
+    hyphens: auto;
+}
+
+h1, h2, h3 {
+    font-family: 'Ubuntu Condensed', sans-serif; 
+    font-weight: normal; 
+    hyphens: none;
+}
+
+h1 {color: #274472; font-size: 4.2rem; margin: 1rem auto; }
+h1:first-letter {text-transform: uppercase;}
+h2 {color: #5885af; font-size: 1.6rem;}
+h3 {background-color: #274472; color: white;}
+a {color: #41729f;}
+
+div.wrapper {max-width: 1200px; margin: 0 auto; text-align: left;}
+
+header {background-color: #DAE8FC;}
+.devise {font-size: 3.5vh; color: #274472;}
+.devise span {font-size: 2.8vh; }
+
+.referat {font-weight: bold; padding: 1rem 0;}
+
+footer {padding: 2rem 0; background-color: #274472; color: white;}
+footer div ul {list-style-type: none; margin: 0;}
+footer div ul li {padding-bottom: .8rem;}
+footer div ul li:hover {text-decoration: underline;}
+footer a {color: white; text-decoration: none;}
+footer ~ p {
+    line-height: 6rem; 
+    padding: 0; 
+    margin: 0; 
+    color: black; 
+    text-transform: uppercase;
+}
+footer ~ p a {color: black;}
+
+ul.tags {list-style: none; margin: 0; padding: 1rem; line-height: 1.5rem;}
+ul.tags li {display: inline-block; font-style: italic; text-align: left; padding-left: .3rem;}
+
+li {hyphens: none;}
+
+form {padding-bottom: 1rem;}
+input#query {
+    font-size: 1.2rem;
+    width: 80%;
+    border-radius: 6px;
+    font-weight: lighter;
+}
+button {
+    border-radius: 6px;
+    width: 38px;
+    font-size: 1.2rem;
+}
+
+img+p, .figure {text-align: center; font-style: italic; }
+
+.crumbs {
+    font-size: .92rem;
+}
+.ads {padding:  0 1rem;}
+.ads img {
+  max-width: 100%;
+  height: auto;
+  
+}
+
+/* flexboxes */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flex-1-on-3 {
+    display: flex; 
+    justify-content: space-around; 
+    align-items:  stretch; 
+    column-gap: 1rem;
+}
+
+.flex-1-on-3 :nth-child(1)  {flex: 1; }
+.flex-1-on-3 :nth-child(2) {flex: 3; }
+.flex-1-on-3 img {width: 100%; height: auto;}
+
+
+.flex-2-on-1 {
+    display: flex; 
+    justify-content: space-around; 
+    align-items:  stretch; 
+    column-gap: 1rem;
+}
+
+.flex-2-on-1 :nth-child(1)  {flex: 2; }
+.flex-2-on-1 :nth-child(2) {flex: 1; }
+.flex-2-on-1 img {width: 100%; height: auto;}
+
+.flex-3-in-row {
+    display: flex; 
+    column-gap: 1.4rem; 
+    flex-wrap: wrap; 
+}
+.flex-3-in-row h2 {width: 100% !important;}
+.flex-3-in-row > aside {flex: 1;}
+
+.flex-4-in-row {display: flex; column-gap: 1rem; flex-wrap: wrap; }
+.flex-4-in-row h2 {
+    width: 100% !important; 
+    color: white; 
+    background-color: #274472; 
+    line-height: 3rem;
+}
+.flex-4-in-row > div {flex: 1;}
+
+footer  {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+/*begin Vanilla JS Carousel*/
+.carousel {display: flex; justify-content: center; align-items: center; }
+.carousel div {width:90%; }
+.carousel img {width: 23% !important; height: auto; margin: 1%;}
+.carousel button {
+    width:5%; height: 100%; 
+    font-family: sans-serif; font-size: 2rem; 
+    border:none; background-color:transparent;
+}
+.carousel button:hover {background-color: lightgray; cursor: pointer; }
+/*end Carousel*/
+
+/* Pagination */
+.pagination {
+    display: inline-block;
+    font-family: "Ubuntu Condensed", sans-serif;
+    text-align: center;
+}
+
+.pagination a {			  
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #274472;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #DAE8FC;
+    border-radius: 5px;
+}
+/*end Pagination*/			
+
+
+#codeShowHide {display: none;}
+
+
+@media screen and (max-width: 800px) {
+
+    div.wrapper {text-align: center;}
+
+    header, .flex-2-on-1, footer {
+        display: block;
+        width: 100%;
+        padding: 0 .5rem;
+    }
+
+    aside {padding: 0;}
+    h1 {font-size: 2rem; text-align: left;}
+
+    article {text-align: justify; text-justify: inter-word; }
+    article img {width: 100%; height: 100%;}
+
+    #logo {width: 100%; height: auto;}
+}
+
+@media only print {
+    header, .flex-3-in-row, .flex-4-in-row, footer {display: none;}
+    .flex-2-on-1 {display: block;}
+}
